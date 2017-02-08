@@ -16,7 +16,7 @@ export class ToDoListComponent implements OnInit {
 
   constructor(
     private _toDoService: ToDoService, 
-    private _router: Router, 
+    //private _router: Router, 
     private _alertService: AlertService) {
 
     /*this._alertService.onToDoUpdated$.subscribe(

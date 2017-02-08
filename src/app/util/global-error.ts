@@ -4,8 +4,8 @@ export class GlobalError {
   message: string;
 
   constructor(error: any) {
-    let myError = error
-    if (error._body && error._body !== "") {
+    let myError = error;
+    if (error._body && error._body !== '') {
       myError = error._body;
     }
     this.status = myError.status || error.status || 500;
@@ -14,6 +14,6 @@ export class GlobalError {
   }
 
   toString(): string {
-    return this.status + " - " + this.error + " - " + this.message;
+    return this.status + ' - ' + this.error + ' - ' + this.message;
   }
 }

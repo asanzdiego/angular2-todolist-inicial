@@ -22,17 +22,17 @@ export class ToDoService {
   }
 
   getAll(page: number, size: number, name): Promise<ToDo[]> {
-    let url = "todo?1=1"
+    let url = 'todo?1=1';
     if (page) {
-      url += "&page=" + page;
+      url += '&page=' + page;
     }
     if (size) {
-      url += "&size=" + size;
+      url += '&size=' + size;
     }
     if (name) {
-      url += "&name=" + name;
+      url += '&name=' + name;
     }
-    console.log("getAll -> url", url);
+    console.log('getAll -> url', url);
     return this._http.get(this._restURL + url, this._getRequestOptions())
       .toPromise()
       .then(response => response.json().content as ToDo[])
@@ -40,8 +40,8 @@ export class ToDoService {
   }
 
   get(id: number): Promise<ToDo> {
-    console.log("get -> id", id);
-    let url = "todo/" + id;
+    console.log('get -> id', id);
+    let url = 'todo/' + id;
     return this._http.get(this._restURL + url, this._getRequestOptions())
       .toPromise()
       .then(response => response.json() as ToDo)
@@ -49,8 +49,8 @@ export class ToDoService {
   }
 
   save(toDo: ToDo): Promise<ToDo> {
-    console.log("save -> toDo", toDo);
-    let url = "todo";
+    console.log('save -> toDo', toDo);
+    let url = 'todo';
     return this._http.post(this._restURL + url, toDo, this._getRequestOptions())
       .toPromise()
       .then(response => response.json() as ToDo)
@@ -58,8 +58,8 @@ export class ToDoService {
   }
 
   update(toDo: ToDo): Promise<ToDo> {
-    console.log("update -> toDo", toDo);
-    let url = "todo/" + toDo.id;
+    console.log('update -> toDo', toDo);
+    let url = 'todo/' + toDo.id;
     return this._http.put(this._restURL + url, toDo, this._getRequestOptions())
       .toPromise()
       .then(response => response.json() as ToDo)
@@ -67,8 +67,8 @@ export class ToDoService {
   }
 
   delete(id: number): Promise<ToDo> {
-    console.log("delete -> id", id);
-    let url = "todo/" + id;
+    console.log('delete -> id', id);
+    let url = 'todo/' + id;
     return this._http.delete(this._restURL + url, this._getRequestOptions())
       .toPromise()
       .then(response => response.json() as ToDo)

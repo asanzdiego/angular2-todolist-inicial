@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { DataTableModule } from "angular2-datatable";
+import { DataTableModule } from 'angular2-datatable';
 
 import { AppComponent } from './components/app/app.component';
 import { ToDoNewComponent } from './components/todo/todo-new.component';
@@ -13,15 +13,16 @@ import { ToDoListComponent } from './components/todo/todo-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent/*,
+    AppComponent,
+    ToDoListComponent/*,
     ToDoNewComponent,
-    ToDoDetailComponent,
-    ToDoListComponent*/
+    ToDoDetailComponent*/
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule/*,
+    HttpModule,
+    DataTableModule/*,
     RouterModule.forRoot([
       {
         path: 'todo/:id',
@@ -31,8 +32,7 @@ import { ToDoListComponent } from './components/todo/todo-list.component';
         path: '**',
         component: ToDoNewComponent
       }
-    ]),
-    DataTableModule*/
+    ])*/
   ],
   providers: [],
   bootstrap: [AppComponent]
